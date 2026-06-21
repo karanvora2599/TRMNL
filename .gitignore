@@ -1,0 +1,72 @@
+# ─── OS ──────────────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# ─── Editors ─────────────────────────────────────────────────
+.vscode/
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*~
+\#*\#
+.\#*
+*.orig
+
+# ─── Node ────────────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ─── Build output ────────────────────────────────────────────
+dist/
+build/
+out/
+.next/
+.nuxt/
+.svelte-kit/
+.parcel-cache/
+.cache/
+*.tsbuildinfo
+
+# ─── Environment ─────────────────────────────────────────────
+.env
+.env.*
+!.env.example
+!.env.sample
+
+# ─── Logs & temp ─────────────────────────────────────────────
+logs/
+*.log
+*.tmp
+*.temp
+*.pid
+*.seed
+
+# ─── Assets & large files ────────────────────────────────────
+# Inspiration screenshots are source material, not tracked
+Inspiration/
+
+# ─── Misc ────────────────────────────────────────────────────
+.vercel
+.netlify
