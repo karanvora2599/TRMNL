@@ -70,3 +70,5 @@ Inspiration/
 # ─── Misc ────────────────────────────────────────────────────
 .vercel
 .netlify
+
+.claude
