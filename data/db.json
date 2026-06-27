@@ -9,13 +9,21 @@
     "kyc_status": "verified",
     "default_account_id": "acct_01JDWM9X2K4N8P3Q7R5T"
   },
+  "institutions": [
+    { "id": "inst_chase",      "name": "Chase Bank",            "short_name": "Chase",    "type": "bank",           "color_style": "flag" },
+    { "id": "inst_amex",       "name": "American Express",      "short_name": "Amex",     "type": "credit_issuer",  "color_style": "user" },
+    { "id": "inst_fidelity",   "name": "Fidelity Investments",  "short_name": "Fidelity", "type": "brokerage",      "color_style": "teal" },
+    { "id": "inst_aidvantage", "name": "Aidvantage",            "short_name": "Aidvantage","type": "loan_servicer", "color_style": "muted" }
+  ],
   "accounts": [
     {
       "id": "acct_01JDWM9X2K4N8P3Q7R5T",
+      "institution_id": "inst_chase",
+      "account_category": "depository",
       "type": "checking",
-      "nickname": "Main Checking",
-      "balance": 4213.8,
-      "available_balance": 4100.0,
+      "nickname": "Chase Checking",
+      "balance": 4213.80,
+      "available_balance": 4100.00,
       "currency": "USD",
       "account_number_last4": "1847",
       "routing_number": "021000021",
@@ -24,8 +32,10 @@
     },
     {
       "id": "acct_01JDWM9X2K4N8P3Q7R5U",
+      "institution_id": "inst_chase",
+      "account_category": "depository",
       "type": "savings",
-      "nickname": "High-Yield Savings",
+      "nickname": "Chase Savings",
       "balance": 11956.42,
       "available_balance": 11956.42,
       "currency": "USD",
@@ -34,507 +44,308 @@
       "apy": 0.045,
       "status": "active",
       "opened_at": "2025-01-15T09:00:00Z"
-    }
-  ],
-  "contacts": [
-    {
-      "id": "cnt_01JDWM9X2K4N8P3Q7R5V",
-      "username": "maya",
-      "display_name": "Maya Chen",
-      "verified": true
     },
     {
-      "id": "cnt_01JDWM9X2K4N8P3Q7R5W",
-      "username": "jay",
-      "display_name": "Jay Patel",
-      "verified": true
-    },
-    {
-      "id": "cnt_01JDWM9X2K4N8P3Q7R5X",
-      "username": "alex",
-      "display_name": "Alex Rivera",
-      "verified": true
-    },
-    {
-      "id": "cnt_01JDWM9X2K4N8P3Q7R5Y",
-      "username": "priya",
-      "display_name": "Priya Sharma",
-      "verified": true
-    },
-    {
-      "id": "cnt_01JDWM9X2K4N8P3Q7R5Z",
-      "username": "nyu",
-      "display_name": "NYU Bursar",
-      "verified": true
-    }
-  ],
-  "transactions": [
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S6T",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 67.43,
+      "id": "acct_amex_gold_01",
+      "institution_id": "inst_amex",
+      "account_category": "credit",
+      "type": "credit_card",
+      "nickname": "Amex Gold",
+      "last4": "3081",
+      "network": "amex",
+      "balance_owed": 847.23,
+      "statement_balance": 1243.56,
+      "credit_limit": 15000.00,
+      "minimum_payment": 35.00,
+      "due_date": "2026-07-15",
+      "apr": 0.2799,
       "currency": "USD",
-      "merchant": {
-        "name": "Whole Foods Market",
-        "category": "grocery",
-        "category_code": "5411"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-06-24T18:12:00Z",
-      "settled_at": "2026-06-25T00:00:00Z"
+      "status": "active",
+      "opened_at": "2024-03-01T00:00:00Z"
     },
     {
-      "id": "txn_01JQ4A2K6M8N0P2R4S6U",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 15.99,
+      "id": "acct_amex_plat_01",
+      "institution_id": "inst_amex",
+      "account_category": "credit",
+      "type": "credit_card",
+      "nickname": "Amex Platinum",
+      "last4": "7722",
+      "network": "amex",
+      "balance_owed": 1240.00,
+      "statement_balance": 1850.00,
+      "credit_limit": 25000.00,
+      "minimum_payment": 50.00,
+      "due_date": "2026-07-20",
+      "apr": 0.2999,
       "currency": "USD",
-      "merchant": {
-        "name": "Netflix",
-        "category": "subscriptions",
-        "category_code": "7841"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-06-23T07:00:00Z",
-      "settled_at": "2026-06-23T00:00:00Z"
+      "status": "active",
+      "opened_at": "2023-08-15T00:00:00Z"
     },
     {
-      "id": "txn_01JQ4A2K6M8N0P2R4S6V",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "transfer",
-      "amount": 800.0,
+      "id": "acct_fid_brok_01",
+      "institution_id": "inst_fidelity",
+      "account_category": "investment",
+      "type": "brokerage",
+      "nickname": "Fidelity Brokerage",
       "currency": "USD",
-      "merchant": {
-        "name": "@maya",
-        "category": "transfer",
-        "category_code": "6012"
-      },
-      "memo": "rent",
-      "status": "settled",
-      "contact_username": "maya",
-      "created_at": "2026-06-22T10:00:00Z",
-      "settled_at": "2026-06-22T10:00:00Z"
+      "status": "active",
+      "opened_at": "2023-06-01T00:00:00Z"
     },
     {
-      "id": "txn_01JQ4A2K6M8N0P2R4S6W",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 12.4,
+      "id": "acct_fid_roth_01",
+      "institution_id": "inst_fidelity",
+      "account_category": "investment",
+      "type": "roth_ira",
+      "nickname": "Fidelity Roth IRA",
       "currency": "USD",
-      "merchant": {
-        "name": "Uber",
-        "category": "transportation",
-        "category_code": "4121"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-06-20T22:34:00Z",
-      "settled_at": "2026-06-21T00:00:00Z"
+      "contribution_limit": 7000.00,
+      "contributions_ytd": 3500.00,
+      "status": "active",
+      "opened_at": "2022-01-15T00:00:00Z"
     },
     {
-      "id": "txn_01JQ4A2K6M8N0P2R4S6X",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 10.99,
+      "id": "acct_aid_loan_01",
+      "institution_id": "inst_aidvantage",
+      "account_category": "loan",
+      "type": "student_loan",
+      "nickname": "Federal Student Loan",
+      "original_balance": 28000.00,
+      "current_balance": 22847.15,
+      "interest_rate": 0.0499,
+      "monthly_payment": 287.34,
+      "payoff_date": "2033-08-01",
+      "next_payment_date": "2026-07-01",
       "currency": "USD",
-      "merchant": {
-        "name": "Spotify",
-        "category": "subscriptions",
-        "category_code": "7929"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-06-18T07:00:00Z",
-      "settled_at": "2026-06-18T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S6Y",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 34.72,
-      "currency": "USD",
-      "merchant": {
-        "name": "Amazon.com",
-        "category": "shopping",
-        "category_code": "5999"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-06-15T14:22:00Z",
-      "settled_at": "2026-06-16T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S6Z",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 18.25,
-      "currency": "USD",
-      "merchant": {
-        "name": "Sweetgreen",
-        "category": "food",
-        "category_code": "5812"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-06-14T13:05:00Z",
-      "settled_at": "2026-06-15T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S70",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 42.1,
-      "currency": "USD",
-      "merchant": {
-        "name": "Amazon.com",
-        "category": "shopping",
-        "category_code": "5999"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-06-12T09:40:00Z",
-      "settled_at": "2026-06-13T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S71",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "credit",
-      "amount": 3200.0,
-      "currency": "USD",
-      "merchant": {
-        "name": "Direct Deposit",
-        "category": "income",
-        "category_code": "6010"
-      },
-      "memo": "payroll",
-      "status": "settled",
-      "created_at": "2026-06-10T08:00:00Z",
-      "settled_at": "2026-06-10T08:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S72",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 2.99,
-      "currency": "USD",
-      "merchant": {
-        "name": "Apple iCloud",
-        "category": "subscriptions",
-        "category_code": "7372"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-06-08T07:00:00Z",
-      "settled_at": "2026-06-08T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S73",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 7.85,
-      "currency": "USD",
-      "merchant": {
-        "name": "Starbucks",
-        "category": "food",
-        "category_code": "5812"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-06-05T08:30:00Z",
-      "settled_at": "2026-06-06T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S74",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "credit",
-      "amount": 50.0,
-      "currency": "USD",
-      "merchant": {
-        "name": "@jay",
-        "category": "transfer",
-        "category_code": "6012"
-      },
-      "memo": "dinner split",
-      "status": "settled",
-      "contact_username": "jay",
-      "created_at": "2026-06-03T20:15:00Z",
-      "settled_at": "2026-06-03T20:15:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S75",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 89.12,
-      "currency": "USD",
-      "merchant": {
-        "name": "Whole Foods Market",
-        "category": "grocery",
-        "category_code": "5411"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-05-30T17:45:00Z",
-      "settled_at": "2026-05-31T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S76",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "transfer",
-      "amount": 500.0,
-      "currency": "USD",
-      "merchant": {
-        "name": "Savings Transfer",
-        "category": "transfer",
-        "category_code": "6012"
-      },
-      "memo": "monthly savings",
-      "destination_account_id": "acct_01JDWM9X2K4N8P3Q7R5U",
-      "status": "settled",
-      "created_at": "2026-05-28T09:00:00Z",
-      "settled_at": "2026-05-28T09:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S77",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 34.99,
-      "currency": "USD",
-      "merchant": {
-        "name": "Hinge",
-        "category": "subscriptions",
-        "category_code": "7372"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-05-25T00:00:00Z",
-      "settled_at": "2026-05-25T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S78",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 14.67,
-      "currency": "USD",
-      "merchant": {
-        "name": "Chipotle",
-        "category": "food",
-        "category_code": "5812"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-05-23T12:30:00Z",
-      "settled_at": "2026-05-24T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S79",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 94.4,
-      "currency": "USD",
-      "merchant": {
-        "name": "Con Edison",
-        "category": "utilities",
-        "category_code": "4911"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-05-20T00:00:00Z",
-      "settled_at": "2026-05-20T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S7A",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 127.54,
-      "currency": "USD",
-      "merchant": {
-        "name": "Amazon.com",
-        "category": "shopping",
-        "category_code": "5999"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-05-15T10:11:00Z",
-      "settled_at": "2026-05-16T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S7B",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "transfer",
-      "amount": 800.0,
-      "currency": "USD",
-      "merchant": {
-        "name": "@maya",
-        "category": "transfer",
-        "category_code": "6012"
-      },
-      "memo": "rent",
-      "status": "settled",
-      "contact_username": "maya",
-      "created_at": "2026-05-12T10:00:00Z",
-      "settled_at": "2026-05-12T10:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S7C",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "credit",
-      "amount": 3200.0,
-      "currency": "USD",
-      "merchant": {
-        "name": "Direct Deposit",
-        "category": "income",
-        "category_code": "6010"
-      },
-      "memo": "payroll",
-      "status": "settled",
-      "created_at": "2026-05-10T08:00:00Z",
-      "settled_at": "2026-05-10T08:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S7D",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 56.21,
-      "currency": "USD",
-      "merchant": {
-        "name": "Target",
-        "category": "shopping",
-        "category_code": "5310"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-05-08T15:22:00Z",
-      "settled_at": "2026-05-09T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S7E",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 31.9,
-      "currency": "USD",
-      "merchant": {
-        "name": "Uber Eats",
-        "category": "food",
-        "category_code": "5812"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-05-05T20:05:00Z",
-      "settled_at": "2026-05-06T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S7F",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 72.88,
-      "currency": "USD",
-      "merchant": {
-        "name": "Whole Foods Market",
-        "category": "grocery",
-        "category_code": "5411"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-04-30T17:55:00Z",
-      "settled_at": "2026-05-01T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S7G",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 39.0,
-      "currency": "USD",
-      "merchant": {
-        "name": "Equinox",
-        "category": "health",
-        "category_code": "7011"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-04-28T00:00:00Z",
-      "settled_at": "2026-04-28T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S7H",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 19.99,
-      "currency": "USD",
-      "merchant": {
-        "name": "Amazon.com",
-        "category": "shopping",
-        "category_code": "5999"
-      },
-      "memo": null,
-      "status": "settled",
-      "created_at": "2026-04-25T11:30:00Z",
-      "settled_at": "2026-04-26T00:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S7I",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "transfer",
-      "amount": 800.0,
-      "currency": "USD",
-      "merchant": {
-        "name": "@maya",
-        "category": "transfer",
-        "category_code": "6012"
-      },
-      "memo": "rent",
-      "status": "settled",
-      "contact_username": "maya",
-      "created_at": "2026-04-22T10:00:00Z",
-      "settled_at": "2026-04-22T10:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S7J",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "credit",
-      "amount": 3200.0,
-      "currency": "USD",
-      "merchant": {
-        "name": "Direct Deposit",
-        "category": "income",
-        "category_code": "6010"
-      },
-      "memo": "payroll",
-      "status": "settled",
-      "created_at": "2026-04-10T08:00:00Z",
-      "settled_at": "2026-04-10T08:00:00Z"
-    },
-    {
-      "id": "txn_01JQ4A2K6M8N0P2R4S7K",
-      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "type": "debit",
-      "amount": 249.0,
-      "currency": "USD",
-      "merchant": {
-        "name": "Apple Store",
-        "category": "shopping",
-        "category_code": "5732"
-      },
-      "memo": "AirPods",
-      "status": "settled",
-      "created_at": "2026-04-08T16:45:00Z",
-      "settled_at": "2026-04-09T00:00:00Z"
+      "status": "active",
+      "opened_at": "2022-09-01T00:00:00Z"
     }
   ],
   "cards": [
     {
       "id": "card_01JDWM9X2K4N8P3Q7R5A",
       "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
-      "nickname": "Main Debit",
+      "nickname": "Chase Debit",
       "last4": "4242",
       "network": "visa",
       "type": "debit",
       "status": "active",
       "expires_at": "2028-01",
       "issued_at": "2025-01-15T09:00:00Z"
+    },
+    {
+      "id": "card_amex_gold_01",
+      "account_id": "acct_amex_gold_01",
+      "nickname": "Amex Gold",
+      "last4": "3081",
+      "network": "amex",
+      "type": "credit",
+      "status": "active",
+      "expires_at": "2027-03",
+      "issued_at": "2024-03-01T00:00:00Z"
+    },
+    {
+      "id": "card_amex_plat_01",
+      "account_id": "acct_amex_plat_01",
+      "nickname": "Amex Platinum",
+      "last4": "7722",
+      "network": "amex",
+      "type": "credit",
+      "status": "active",
+      "expires_at": "2026-08",
+      "issued_at": "2023-08-15T00:00:00Z"
     }
+  ],
+  "contacts": [
+    { "id": "cnt_01JDWM9X2K4N8P3Q7R5V", "username": "maya",  "display_name": "Maya Chen",     "verified": true },
+    { "id": "cnt_01JDWM9X2K4N8P3Q7R5W", "username": "jay",   "display_name": "Jay Patel",      "verified": true },
+    { "id": "cnt_01JDWM9X2K4N8P3Q7R5X", "username": "alex",  "display_name": "Alex Rivera",    "verified": true },
+    { "id": "cnt_01JDWM9X2K4N8P3Q7R5Y", "username": "priya", "display_name": "Priya Sharma",   "verified": true },
+    { "id": "cnt_01JDWM9X2K4N8P3Q7R5Z", "username": "nyu",   "display_name": "NYU Bursar",     "verified": true }
+  ],
+  "transactions": [
+    { "id": "txn_jan_01", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 92.50,   "currency": "USD", "merchant": { "name": "Whole Foods Market",  "category": "grocery",       "category_code": "5411" }, "memo": null,      "status": "settled", "created_at": "2026-01-31T17:30:00Z", "settled_at": "2026-02-01T00:00:00Z" },
+    { "id": "txn_jan_02", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 15.99,   "currency": "USD", "merchant": { "name": "Netflix",             "category": "subscriptions", "category_code": "7841" }, "memo": null,      "status": "settled", "created_at": "2026-01-28T07:00:00Z", "settled_at": "2026-01-28T00:00:00Z" },
+    { "id": "txn_jan_03", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "transfer", "amount": 800.00,  "currency": "USD", "merchant": { "name": "@maya",             "category": "transfer",      "category_code": "6012" }, "memo": "rent",    "status": "settled", "created_at": "2026-01-25T10:00:00Z", "settled_at": "2026-01-25T10:00:00Z", "contact_username": "maya" },
+    { "id": "txn_jan_04", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 14.80,   "currency": "USD", "merchant": { "name": "Uber",               "category": "transportation","category_code": "4121" }, "memo": null,      "status": "settled", "created_at": "2026-01-22T22:10:00Z", "settled_at": "2026-01-23T00:00:00Z" },
+    { "id": "txn_jan_05", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 10.99,   "currency": "USD", "merchant": { "name": "Spotify",             "category": "subscriptions", "category_code": "7929" }, "memo": null,      "status": "settled", "created_at": "2026-01-20T07:00:00Z", "settled_at": "2026-01-20T00:00:00Z" },
+    { "id": "txn_jan_06", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 128.45,  "currency": "USD", "merchant": { "name": "Amazon.com",          "category": "shopping",      "category_code": "5999" }, "memo": null,      "status": "settled", "created_at": "2026-01-18T13:20:00Z", "settled_at": "2026-01-19T00:00:00Z" },
+    { "id": "txn_jan_07", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 240.00,  "currency": "USD", "merchant": { "name": "Equinox",             "category": "health",        "category_code": "7011" }, "memo": null,      "status": "settled", "created_at": "2026-01-15T00:00:00Z", "settled_at": "2026-01-15T00:00:00Z" },
+    { "id": "txn_jan_08", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "credit",   "amount": 3200.00, "currency": "USD", "merchant": { "name": "Direct Deposit",      "category": "income",        "category_code": "6010" }, "memo": "payroll", "status": "settled", "created_at": "2026-01-10T08:00:00Z", "settled_at": "2026-01-10T08:00:00Z" },
+    { "id": "txn_jan_09", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 94.40,   "currency": "USD", "merchant": { "name": "Con Edison",          "category": "utilities",     "category_code": "4911" }, "memo": null,      "status": "settled", "created_at": "2026-01-08T00:00:00Z", "settled_at": "2026-01-08T00:00:00Z" },
+    { "id": "txn_jan_10", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 24.80,   "currency": "USD", "merchant": { "name": "Sweetgreen",          "category": "food",          "category_code": "5812" }, "memo": null,      "status": "settled", "created_at": "2026-01-05T12:30:00Z", "settled_at": "2026-01-06T00:00:00Z" },
+    { "id": "txn_jan_11", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 9.20,    "currency": "USD", "merchant": { "name": "Starbucks",           "category": "food",          "category_code": "5812" }, "memo": null,      "status": "settled", "created_at": "2026-01-03T08:10:00Z", "settled_at": "2026-01-04T00:00:00Z" },
+
+    { "id": "txn_feb_01", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 78.30,   "currency": "USD", "merchant": { "name": "Whole Foods Market",  "category": "grocery",       "category_code": "5411" }, "memo": null,      "status": "settled", "created_at": "2026-02-28T17:00:00Z", "settled_at": "2026-03-01T00:00:00Z" },
+    { "id": "txn_feb_02", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 15.99,   "currency": "USD", "merchant": { "name": "Netflix",             "category": "subscriptions", "category_code": "7841" }, "memo": null,      "status": "settled", "created_at": "2026-02-25T07:00:00Z", "settled_at": "2026-02-25T00:00:00Z" },
+    { "id": "txn_feb_03", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "transfer", "amount": 800.00,  "currency": "USD", "merchant": { "name": "@maya",             "category": "transfer",      "category_code": "6012" }, "memo": "rent",    "status": "settled", "created_at": "2026-02-22T10:00:00Z", "settled_at": "2026-02-22T10:00:00Z", "contact_username": "maya" },
+    { "id": "txn_feb_04", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 10.99,   "currency": "USD", "merchant": { "name": "Spotify",             "category": "subscriptions", "category_code": "7929" }, "memo": null,      "status": "settled", "created_at": "2026-02-20T07:00:00Z", "settled_at": "2026-02-20T00:00:00Z" },
+    { "id": "txn_feb_05", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 48.50,   "currency": "USD", "merchant": { "name": "Chipotle",            "category": "food",          "category_code": "5812" }, "memo": null,      "status": "settled", "created_at": "2026-02-18T13:00:00Z", "settled_at": "2026-02-19T00:00:00Z" },
+    { "id": "txn_feb_06", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 89.00,   "currency": "USD", "merchant": { "name": "Amazon.com",          "category": "shopping",      "category_code": "5999" }, "memo": null,      "status": "settled", "created_at": "2026-02-15T10:00:00Z", "settled_at": "2026-02-16T00:00:00Z" },
+    { "id": "txn_feb_07", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 245.00,  "currency": "USD", "merchant": { "name": "Romantique NYC",      "category": "food",          "category_code": "5812" }, "memo": "valentine's", "status": "settled", "created_at": "2026-02-14T20:00:00Z", "settled_at": "2026-02-15T00:00:00Z" },
+    { "id": "txn_feb_08", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 2.99,    "currency": "USD", "merchant": { "name": "Apple iCloud",        "category": "subscriptions", "category_code": "7372" }, "memo": null,      "status": "settled", "created_at": "2026-02-12T07:00:00Z", "settled_at": "2026-02-12T00:00:00Z" },
+    { "id": "txn_feb_09", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "credit",   "amount": 3200.00, "currency": "USD", "merchant": { "name": "Direct Deposit",      "category": "income",        "category_code": "6010" }, "memo": "payroll", "status": "settled", "created_at": "2026-02-10T08:00:00Z", "settled_at": "2026-02-10T08:00:00Z" },
+    { "id": "txn_feb_10", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 94.40,   "currency": "USD", "merchant": { "name": "Con Edison",          "category": "utilities",     "category_code": "4911" }, "memo": null,      "status": "settled", "created_at": "2026-02-08T00:00:00Z", "settled_at": "2026-02-08T00:00:00Z" },
+    { "id": "txn_feb_11", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 32.40,   "currency": "USD", "merchant": { "name": "Sweetgreen",          "category": "food",          "category_code": "5812" }, "memo": null,      "status": "settled", "created_at": "2026-02-05T12:30:00Z", "settled_at": "2026-02-06T00:00:00Z" },
+
+    { "id": "txn_mar_01", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 85.60,   "currency": "USD", "merchant": { "name": "Whole Foods Market",  "category": "grocery",       "category_code": "5411" }, "memo": null,      "status": "settled", "created_at": "2026-03-31T17:00:00Z", "settled_at": "2026-04-01T00:00:00Z" },
+    { "id": "txn_mar_02", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 15.99,   "currency": "USD", "merchant": { "name": "Netflix",             "category": "subscriptions", "category_code": "7841" }, "memo": null,      "status": "settled", "created_at": "2026-03-28T07:00:00Z", "settled_at": "2026-03-28T00:00:00Z" },
+    { "id": "txn_mar_03", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "transfer", "amount": 800.00,  "currency": "USD", "merchant": { "name": "@maya",             "category": "transfer",      "category_code": "6012" }, "memo": "rent",    "status": "settled", "created_at": "2026-03-25T10:00:00Z", "settled_at": "2026-03-25T10:00:00Z", "contact_username": "maya" },
+    { "id": "txn_mar_04", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 10.99,   "currency": "USD", "merchant": { "name": "Spotify",             "category": "subscriptions", "category_code": "7929" }, "memo": null,      "status": "settled", "created_at": "2026-03-22T07:00:00Z", "settled_at": "2026-03-22T00:00:00Z" },
+    { "id": "txn_mar_05", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 62.40,   "currency": "USD", "merchant": { "name": "Target",              "category": "shopping",      "category_code": "5310" }, "memo": null,      "status": "settled", "created_at": "2026-03-20T15:00:00Z", "settled_at": "2026-03-21T00:00:00Z" },
+    { "id": "txn_mar_06", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 119.00,  "currency": "USD", "merchant": { "name": "Amazon.com",          "category": "shopping",      "category_code": "5999" }, "memo": null,      "status": "settled", "created_at": "2026-03-15T11:00:00Z", "settled_at": "2026-03-16T00:00:00Z" },
+    { "id": "txn_mar_07", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 94.40,   "currency": "USD", "merchant": { "name": "Con Edison",          "category": "utilities",     "category_code": "4911" }, "memo": null,      "status": "settled", "created_at": "2026-03-12T00:00:00Z", "settled_at": "2026-03-12T00:00:00Z" },
+    { "id": "txn_mar_08", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "credit",   "amount": 3200.00, "currency": "USD", "merchant": { "name": "Direct Deposit",      "category": "income",        "category_code": "6010" }, "memo": "payroll", "status": "settled", "created_at": "2026-03-10T08:00:00Z", "settled_at": "2026-03-10T08:00:00Z" },
+    { "id": "txn_mar_09", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 34.99,   "currency": "USD", "merchant": { "name": "Hinge",               "category": "subscriptions", "category_code": "7372" }, "memo": null,      "status": "settled", "created_at": "2026-03-08T00:00:00Z", "settled_at": "2026-03-08T00:00:00Z" },
+    { "id": "txn_mar_10", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 25.90,   "currency": "USD", "merchant": { "name": "Sweetgreen",          "category": "food",          "category_code": "5812" }, "memo": null,      "status": "settled", "created_at": "2026-03-05T12:30:00Z", "settled_at": "2026-03-06T00:00:00Z" },
+    { "id": "txn_mar_11", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 12.60,   "currency": "USD", "merchant": { "name": "Starbucks",           "category": "food",          "category_code": "5812" }, "memo": null,      "status": "settled", "created_at": "2026-03-01T08:10:00Z", "settled_at": "2026-03-02T00:00:00Z" },
+
+    { "id": "txn_01JQ4A2K6M8N0P2R4S6T", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 67.43,   "currency": "USD", "merchant": { "name": "Whole Foods Market",  "category": "grocery",       "category_code": "5411" }, "memo": null,      "status": "settled", "created_at": "2026-06-24T18:12:00Z", "settled_at": "2026-06-25T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S6U", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 15.99,   "currency": "USD", "merchant": { "name": "Netflix",             "category": "subscriptions", "category_code": "7841" }, "memo": null,      "status": "settled", "created_at": "2026-06-23T07:00:00Z", "settled_at": "2026-06-23T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S6V", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "transfer", "amount": 800.00,  "currency": "USD", "merchant": { "name": "@maya",             "category": "transfer",      "category_code": "6012" }, "memo": "rent",    "status": "settled", "created_at": "2026-06-22T10:00:00Z", "settled_at": "2026-06-22T10:00:00Z", "contact_username": "maya" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S6W", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 12.40,   "currency": "USD", "merchant": { "name": "Uber",               "category": "transportation","category_code": "4121" }, "memo": null,      "status": "settled", "created_at": "2026-06-20T22:34:00Z", "settled_at": "2026-06-21T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S6X", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 10.99,   "currency": "USD", "merchant": { "name": "Spotify",             "category": "subscriptions", "category_code": "7929" }, "memo": null,      "status": "settled", "created_at": "2026-06-18T07:00:00Z", "settled_at": "2026-06-18T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S6Y", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 34.72,   "currency": "USD", "merchant": { "name": "Amazon.com",          "category": "shopping",      "category_code": "5999" }, "memo": null,      "status": "settled", "created_at": "2026-06-15T14:22:00Z", "settled_at": "2026-06-16T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S6Z", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 18.25,   "currency": "USD", "merchant": { "name": "Sweetgreen",          "category": "food",          "category_code": "5812" }, "memo": null,      "status": "settled", "created_at": "2026-06-14T13:05:00Z", "settled_at": "2026-06-15T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S70", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 42.10,   "currency": "USD", "merchant": { "name": "Amazon.com",          "category": "shopping",      "category_code": "5999" }, "memo": null,      "status": "settled", "created_at": "2026-06-12T09:40:00Z", "settled_at": "2026-06-13T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S71", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "credit",   "amount": 3200.00, "currency": "USD", "merchant": { "name": "Direct Deposit",      "category": "income",        "category_code": "6010" }, "memo": "payroll", "status": "settled", "created_at": "2026-06-10T08:00:00Z", "settled_at": "2026-06-10T08:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S72", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 2.99,    "currency": "USD", "merchant": { "name": "Apple iCloud",        "category": "subscriptions", "category_code": "7372" }, "memo": null,      "status": "settled", "created_at": "2026-06-08T07:00:00Z", "settled_at": "2026-06-08T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S73", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 7.85,    "currency": "USD", "merchant": { "name": "Starbucks",           "category": "food",          "category_code": "5812" }, "memo": null,      "status": "settled", "created_at": "2026-06-05T08:30:00Z", "settled_at": "2026-06-06T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S74", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "credit",   "amount": 50.00,   "currency": "USD", "merchant": { "name": "@jay",              "category": "transfer",      "category_code": "6012" }, "memo": "dinner split", "status": "settled", "created_at": "2026-06-03T20:15:00Z", "settled_at": "2026-06-03T20:15:00Z", "contact_username": "jay" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S75", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 89.12,   "currency": "USD", "merchant": { "name": "Whole Foods Market",  "category": "grocery",       "category_code": "5411" }, "memo": null,      "status": "settled", "created_at": "2026-05-30T17:45:00Z", "settled_at": "2026-05-31T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S76", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "transfer", "amount": 500.00,  "currency": "USD", "merchant": { "name": "Savings Transfer",    "category": "transfer",      "category_code": "6012" }, "memo": "monthly savings", "status": "settled", "created_at": "2026-05-28T09:00:00Z", "settled_at": "2026-05-28T09:00:00Z", "destination_account_id": "acct_01JDWM9X2K4N8P3Q7R5U" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S77", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 34.99,   "currency": "USD", "merchant": { "name": "Hinge",               "category": "subscriptions", "category_code": "7372" }, "memo": null,      "status": "settled", "created_at": "2026-05-25T00:00:00Z", "settled_at": "2026-05-25T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S78", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 14.67,   "currency": "USD", "merchant": { "name": "Chipotle",            "category": "food",          "category_code": "5812" }, "memo": null,      "status": "settled", "created_at": "2026-05-23T12:30:00Z", "settled_at": "2026-05-24T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S79", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 94.40,   "currency": "USD", "merchant": { "name": "Con Edison",          "category": "utilities",     "category_code": "4911" }, "memo": null,      "status": "settled", "created_at": "2026-05-20T00:00:00Z", "settled_at": "2026-05-20T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S7A", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 127.54,  "currency": "USD", "merchant": { "name": "Amazon.com",          "category": "shopping",      "category_code": "5999" }, "memo": null,      "status": "settled", "created_at": "2026-05-15T10:11:00Z", "settled_at": "2026-05-16T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S7B", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "transfer", "amount": 800.00,  "currency": "USD", "merchant": { "name": "@maya",             "category": "transfer",      "category_code": "6012" }, "memo": "rent",    "status": "settled", "created_at": "2026-05-12T10:00:00Z", "settled_at": "2026-05-12T10:00:00Z", "contact_username": "maya" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S7C", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "credit",   "amount": 3200.00, "currency": "USD", "merchant": { "name": "Direct Deposit",      "category": "income",        "category_code": "6010" }, "memo": "payroll", "status": "settled", "created_at": "2026-05-10T08:00:00Z", "settled_at": "2026-05-10T08:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S7D", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 56.21,   "currency": "USD", "merchant": { "name": "Target",              "category": "shopping",      "category_code": "5310" }, "memo": null,      "status": "settled", "created_at": "2026-05-08T15:22:00Z", "settled_at": "2026-05-09T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S7E", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 31.90,   "currency": "USD", "merchant": { "name": "Uber Eats",           "category": "food",          "category_code": "5812" }, "memo": null,      "status": "settled", "created_at": "2026-05-05T20:05:00Z", "settled_at": "2026-05-06T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S7F", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 72.88,   "currency": "USD", "merchant": { "name": "Whole Foods Market",  "category": "grocery",       "category_code": "5411" }, "memo": null,      "status": "settled", "created_at": "2026-04-30T17:55:00Z", "settled_at": "2026-05-01T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S7G", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 39.00,   "currency": "USD", "merchant": { "name": "Equinox",             "category": "health",        "category_code": "7011" }, "memo": null,      "status": "settled", "created_at": "2026-04-28T00:00:00Z", "settled_at": "2026-04-28T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S7H", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 19.99,   "currency": "USD", "merchant": { "name": "Amazon.com",          "category": "shopping",      "category_code": "5999" }, "memo": null,      "status": "settled", "created_at": "2026-04-25T11:30:00Z", "settled_at": "2026-04-26T00:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S7I", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "transfer", "amount": 800.00,  "currency": "USD", "merchant": { "name": "@maya",             "category": "transfer",      "category_code": "6012" }, "memo": "rent",    "status": "settled", "created_at": "2026-04-22T10:00:00Z", "settled_at": "2026-04-22T10:00:00Z", "contact_username": "maya" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S7J", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "credit",   "amount": 3200.00, "currency": "USD", "merchant": { "name": "Direct Deposit",      "category": "income",        "category_code": "6010" }, "memo": "payroll", "status": "settled", "created_at": "2026-04-10T08:00:00Z", "settled_at": "2026-04-10T08:00:00Z" },
+    { "id": "txn_01JQ4A2K6M8N0P2R4S7K", "account_id": "acct_01JDWM9X2K4N8P3Q7R5T", "type": "debit",    "amount": 249.00,  "currency": "USD", "merchant": { "name": "Apple Store",         "category": "shopping",      "category_code": "5732" }, "memo": "AirPods",  "status": "settled", "created_at": "2026-04-08T16:45:00Z", "settled_at": "2026-04-09T00:00:00Z" },
+
+    { "id": "txn_amex_g_01", "account_id": "acct_amex_gold_01", "type": "debit",  "amount": 178.50, "currency": "USD", "merchant": { "name": "Nobu NYC",            "category": "food",    "category_code": "5812" }, "memo": null,          "status": "settled", "created_at": "2026-06-22T20:30:00Z", "settled_at": "2026-06-23T00:00:00Z" },
+    { "id": "txn_amex_g_02", "account_id": "acct_amex_gold_01", "type": "debit",  "amount": 92.40,  "currency": "USD", "merchant": { "name": "Whole Foods Market", "category": "grocery", "category_code": "5411" }, "memo": null,          "status": "settled", "created_at": "2026-06-18T16:00:00Z", "settled_at": "2026-06-19T00:00:00Z" },
+    { "id": "txn_amex_g_03", "account_id": "acct_amex_gold_01", "type": "debit",  "amount": 284.50, "currency": "USD", "merchant": { "name": "Delta Air Lines",     "category": "travel",  "category_code": "4511" }, "memo": null,          "status": "settled", "created_at": "2026-06-15T14:00:00Z", "settled_at": "2026-06-16T00:00:00Z" },
+    { "id": "txn_amex_g_04", "account_id": "acct_amex_gold_01", "type": "debit",  "amount": 145.80, "currency": "USD", "merchant": { "name": "L'Artusi",            "category": "food",    "category_code": "5812" }, "memo": null,          "status": "settled", "created_at": "2026-06-10T19:30:00Z", "settled_at": "2026-06-11T00:00:00Z" },
+    { "id": "txn_amex_g_05", "account_id": "acct_amex_gold_01", "type": "debit",  "amount": 67.30,  "currency": "USD", "merchant": { "name": "Erewhon Market",      "category": "grocery", "category_code": "5411" }, "memo": null,          "status": "settled", "created_at": "2026-06-05T12:00:00Z", "settled_at": "2026-06-06T00:00:00Z" },
+    { "id": "txn_amex_g_06", "account_id": "acct_amex_gold_01", "type": "credit", "amount": 60.00,  "currency": "USD", "merchant": { "name": "Amex Rewards Credit", "category": "other",   "category_code": "0000" }, "memo": "dining credit", "status": "settled", "created_at": "2026-06-01T00:00:00Z", "settled_at": "2026-06-01T00:00:00Z" },
+    { "id": "txn_amex_g_07", "account_id": "acct_amex_gold_01", "type": "credit", "amount": 800.00, "currency": "USD", "merchant": { "name": "Payment",             "category": "other",   "category_code": "0000" }, "memo": "autopay",     "status": "settled", "created_at": "2026-05-28T00:00:00Z", "settled_at": "2026-05-28T00:00:00Z" },
+    { "id": "txn_amex_g_08", "account_id": "acct_amex_gold_01", "type": "debit",  "amount": 210.00, "currency": "USD", "merchant": { "name": "Sushi Nakazawa",      "category": "food",    "category_code": "5812" }, "memo": "omakase",     "status": "settled", "created_at": "2026-05-22T20:00:00Z", "settled_at": "2026-05-23T00:00:00Z" },
+    { "id": "txn_amex_g_09", "account_id": "acct_amex_gold_01", "type": "debit",  "amount": 88.40,  "currency": "USD", "merchant": { "name": "Trader Joe's",        "category": "grocery", "category_code": "5411" }, "memo": null,          "status": "settled", "created_at": "2026-05-18T15:00:00Z", "settled_at": "2026-05-19T00:00:00Z" },
+    { "id": "txn_amex_g_10", "account_id": "acct_amex_gold_01", "type": "debit",  "amount": 198.00, "currency": "USD", "merchant": { "name": "JetBlue Airways",     "category": "travel",  "category_code": "4511" }, "memo": "BOS",         "status": "settled", "created_at": "2026-05-14T10:00:00Z", "settled_at": "2026-05-15T00:00:00Z" },
+    { "id": "txn_amex_g_11", "account_id": "acct_amex_gold_01", "type": "debit",  "amount": 145.80, "currency": "USD", "merchant": { "name": "Cipriani Downtown",   "category": "food",    "category_code": "5812" }, "memo": null,          "status": "settled", "created_at": "2026-05-05T20:00:00Z", "settled_at": "2026-05-06T00:00:00Z" },
+
+    { "id": "txn_amex_p_01", "account_id": "acct_amex_plat_01", "type": "debit",  "amount": 54.20,  "currency": "USD", "merchant": { "name": "Uber Black",          "category": "transportation", "category_code": "4121" }, "memo": "JFK",    "status": "settled", "created_at": "2026-06-24T08:00:00Z", "settled_at": "2026-06-25T00:00:00Z" },
+    { "id": "txn_amex_p_02", "account_id": "acct_amex_plat_01", "type": "debit",  "amount": 380.00, "currency": "USD", "merchant": { "name": "Marriott Times Sq",   "category": "hotel",          "category_code": "7011" }, "memo": null,    "status": "settled", "created_at": "2026-06-20T15:00:00Z", "settled_at": "2026-06-21T00:00:00Z" },
+    { "id": "txn_amex_p_03", "account_id": "acct_amex_plat_01", "type": "debit",  "amount": 560.00, "currency": "USD", "merchant": { "name": "Delta First Class",    "category": "travel",         "category_code": "4511" }, "memo": "SFO",   "status": "settled", "created_at": "2026-06-18T12:00:00Z", "settled_at": "2026-06-19T00:00:00Z" },
+    { "id": "txn_amex_p_04", "account_id": "acct_amex_plat_01", "type": "credit", "amount": 500.00, "currency": "USD", "merchant": { "name": "Payment",             "category": "other",          "category_code": "0000" }, "memo": "autopay", "status": "settled", "created_at": "2026-06-01T00:00:00Z", "settled_at": "2026-06-01T00:00:00Z" },
+    { "id": "txn_amex_p_05", "account_id": "acct_amex_plat_01", "type": "debit",  "amount": 246.80, "currency": "USD", "merchant": { "name": "Park Hyatt Chicago",  "category": "hotel",          "category_code": "7011" }, "memo": null,    "status": "settled", "created_at": "2026-05-28T15:00:00Z", "settled_at": "2026-05-29T00:00:00Z" },
+    { "id": "txn_amex_p_06", "account_id": "acct_amex_plat_01", "type": "debit",  "amount": 148.00, "currency": "USD", "merchant": { "name": "Amtrak Acela",        "category": "travel",         "category_code": "4011" }, "memo": "WAS",   "status": "settled", "created_at": "2026-05-20T06:00:00Z", "settled_at": "2026-05-21T00:00:00Z" }
+  ],
+  "holdings": [
+    { "account_id": "acct_fid_brok_01", "ticker": "AAPL",  "name": "Apple Inc.",                    "shares": 10.0,  "cost_basis_per_share": 158.20, "asset_class": "equity" },
+    { "account_id": "acct_fid_brok_01", "ticker": "VTI",   "name": "Vanguard Total Stk Mkt ETF",   "shares": 30.0,  "cost_basis_per_share": 218.50, "asset_class": "etf"    },
+    { "account_id": "acct_fid_brok_01", "ticker": "MSFT",  "name": "Microsoft Corp.",               "shares": 7.0,   "cost_basis_per_share": 310.15, "asset_class": "equity" },
+    { "account_id": "acct_fid_brok_01", "ticker": "GOOGL", "name": "Alphabet Inc.",                 "shares": 5.0,   "cost_basis_per_share": 138.00, "asset_class": "equity" },
+    { "account_id": "acct_fid_brok_01", "ticker": "FZROX", "name": "Fidelity ZERO Total Market",   "shares": 200.0, "cost_basis_per_share": 19.45,  "asset_class": "etf"    },
+    { "account_id": "acct_fid_roth_01", "ticker": "FSKAX", "name": "Fidelity Total Market Index",  "shares": 90.0,  "cost_basis_per_share": 68.20,  "asset_class": "etf"    },
+    { "account_id": "acct_fid_roth_01", "ticker": "FXAIX", "name": "Fidelity 500 Index Fund",      "shares": 25.0,  "cost_basis_per_share": 193.80, "asset_class": "etf"    },
+    { "account_id": "acct_fid_roth_01", "ticker": "FTIHX", "name": "Fidelity Total Intl Index",   "shares": 30.0,  "cost_basis_per_share": 14.80,  "asset_class": "etf"    }
+  ],
+  "quotes": [
+    {
+      "ticker": "AAPL",  "name": "Apple Inc.",                   "current_price": 201.45, "prev_close": 200.80,
+      "day_change": 0.65,  "day_change_pct": 0.0032,
+      "week_52_high": 237.23, "week_52_low": 164.08, "market_cap": "3.01T",
+      "price_history": [192.10, 194.80, 196.30, 197.80, 199.40, 200.10, 199.90, 200.80, 201.45]
+    },
+    {
+      "ticker": "VTI",   "name": "Vanguard Total Stk Mkt ETF",  "current_price": 248.10, "prev_close": 247.80,
+      "day_change": 0.30,  "day_change_pct": 0.0012,
+      "week_52_high": 263.40, "week_52_low": 202.15, "market_cap": null,
+      "price_history": [243.20, 244.50, 245.20, 246.10, 246.80, 247.30, 247.50, 247.80, 248.10]
+    },
+    {
+      "ticker": "MSFT",  "name": "Microsoft Corp.",              "current_price": 445.20, "prev_close": 444.10,
+      "day_change": 1.10,  "day_change_pct": 0.0025,
+      "week_52_high": 468.35, "week_52_low": 385.00, "market_cap": "3.31T",
+      "price_history": [436.20, 438.50, 440.10, 441.80, 443.20, 443.80, 444.00, 444.10, 445.20]
+    },
+    {
+      "ticker": "GOOGL", "name": "Alphabet Inc.",                "current_price": 192.30, "prev_close": 192.40,
+      "day_change": -0.10, "day_change_pct": -0.0005,
+      "week_52_high": 207.05, "week_52_low": 155.62, "market_cap": "2.34T",
+      "price_history": [186.40, 188.20, 190.10, 191.30, 192.00, 192.10, 192.30, 192.40, 192.30]
+    },
+    {
+      "ticker": "FZROX", "name": "Fidelity ZERO Total Market",  "current_price": 22.84,  "prev_close": 22.75,
+      "day_change": 0.09,  "day_change_pct": 0.0040,
+      "week_52_high": 24.12, "week_52_low": 18.80, "market_cap": null,
+      "price_history": [22.10, 22.25, 22.40, 22.55, 22.65, 22.70, 22.72, 22.75, 22.84]
+    },
+    {
+      "ticker": "FSKAX", "name": "Fidelity Total Market Index", "current_price": 79.34,  "prev_close": 79.20,
+      "day_change": 0.14,  "day_change_pct": 0.0018,
+      "week_52_high": 83.40, "week_52_low": 65.10, "market_cap": null,
+      "price_history": [77.80, 78.10, 78.50, 78.80, 79.00, 79.10, 79.15, 79.20, 79.34]
+    },
+    {
+      "ticker": "FXAIX", "name": "Fidelity 500 Index Fund",    "current_price": 242.50, "prev_close": 242.30,
+      "day_change": 0.20,  "day_change_pct": 0.0008,
+      "week_52_high": 257.80, "week_52_low": 198.40, "market_cap": null,
+      "price_history": [237.80, 239.10, 240.20, 241.40, 242.00, 242.10, 242.20, 242.30, 242.50]
+    },
+    {
+      "ticker": "FTIHX", "name": "Fidelity Total Intl Index",  "current_price": 16.42,  "prev_close": 16.40,
+      "day_change": 0.02,  "day_change_pct": 0.0012,
+      "week_52_high": 17.85, "week_52_low": 13.20, "market_cap": null,
+      "price_history": [16.10, 16.15, 16.25, 16.30, 16.35, 16.38, 16.39, 16.40, 16.42]
+    }
+  ],
+  "balance_history": [
+    {
+      "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
+      "snapshots": [
+        { "month": "2026-01", "balance": 3215.40 },
+        { "month": "2026-02", "balance": 2890.15 },
+        { "month": "2026-03", "balance": 3540.80 },
+        { "month": "2026-04", "balance": 3128.60 },
+        { "month": "2026-05", "balance": 2940.22 },
+        { "month": "2026-06", "balance": 4213.80 }
+      ]
+    },
+    {
+      "account_id": "acct_01JDWM9X2K4N8P3Q7R5U",
+      "snapshots": [
+        { "month": "2026-01", "balance": 8200.00 },
+        { "month": "2026-02", "balance": 8700.00 },
+        { "month": "2026-03", "balance": 9400.00 },
+        { "month": "2026-04", "balance": 10200.00 },
+        { "month": "2026-05", "balance": 11500.00 },
+        { "month": "2026-06", "balance": 11956.42 }
+      ]
+    }
+  ],
+  "net_worth_history": [
+    { "month": "2026-01", "net_worth": 8240.50  },
+    { "month": "2026-02", "net_worth": 12480.30 },
+    { "month": "2026-03", "net_worth": 16920.60 },
+    { "month": "2026-04", "net_worth": 20340.80 },
+    { "month": "2026-05", "net_worth": 22640.20 },
+    { "month": "2026-06", "net_worth": 23034.94 }
+  ],
+  "monthly_spend_history": [
+    { "month": "2026-01", "total": 2240.00 },
+    { "month": "2026-02", "total": 1890.00 },
+    { "month": "2026-03", "total": 2080.00 },
+    { "month": "2026-04", "total": 2420.00 },
+    { "month": "2026-05", "total": 3150.00 },
+    { "month": "2026-06", "total": 2980.00 }
   ],
   "recurring_payments": [
     {
@@ -542,7 +353,7 @@
       "account_id": "acct_01JDWM9X2K4N8P3Q7R5T",
       "payee_username": "maya",
       "payee_display_name": "Maya Chen",
-      "amount": 800.0,
+      "amount": 800.00,
       "currency": "USD",
       "memo": "rent",
       "frequency": "monthly",
@@ -565,5 +376,14 @@
       "status": "active",
       "created_at": "2025-01-23T00:00:00Z"
     }
+  ],
+  "budgets": [
+    { "category": "grocery",        "limit": 400.00, "period": "monthly" },
+    { "category": "food",           "limit": 200.00, "period": "monthly" },
+    { "category": "subscriptions",  "limit": 100.00, "period": "monthly" },
+    { "category": "shopping",       "limit": 300.00, "period": "monthly" },
+    { "category": "utilities",      "limit": 150.00, "period": "monthly" },
+    { "category": "transportation", "limit": 80.00,  "period": "monthly" },
+    { "category": "health",         "limit": 80.00,  "period": "monthly" }
   ]
 }

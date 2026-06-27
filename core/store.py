@@ -38,7 +38,9 @@ class Store:
 
     def get_default_account(self) -> dict:
         default_id = self._data["user"]["default_account_id"]
-        return self.get_account(acct_id=default_id)
+        acct = self.get_account(acct_id=default_id)
+        assert acct is not None
+        return acct
 
     def update_balance(self, acct_id: str, delta: float):
         for a in self._data["accounts"]:
@@ -105,3 +107,120 @@ class Store:
     def add_recurring(self, rec: dict):
         self._data["recurring_payments"].append(rec)
         self._save()
+
+    # ── Budgets ──────────────────────────────────────────────────
+
+    def get_budgets(self) -> list[dict]:
+        return self._data.get("budgets", [])
+
+    # ── Institutions ─────────────────────────────────────────────
+
+    def get_institutions(self) -> list[dict]:
+        return self._data.get("institutions", [])
+
+    def get_institution(self, inst_id: str) -> dict | None:
+        for i in self._data.get("institutions", []):
+            if i["id"] == inst_id:
+                return i
+        return None
+
+    def get_accounts_by_category(self, category: str) -> list[dict]:
+        return [a for a in self._data["accounts"] if a.get("account_category") == category]
+
+    def get_accounts_by_institution(self, inst_id: str) -> list[dict]:
+        return [a for a in self._data["accounts"] if a.get("institution_id") == inst_id]
+
+    def find_account(self, query: str) -> dict | None:
+        q = query.lower().strip()
+        for a in self._data["accounts"]:
+            if a["id"] == query:
+                return a
+            if a.get("type", "").lower() == q:
+                return a
+            if a.get("last4", "") == q:
+                return a
+            nick = a.get("nickname", "").lower()
+            if q in nick or nick in q:
+                return a
+            inst = self.get_institution(a.get("institution_id", ""))
+            if inst:
+                short = inst.get("short_name", "").lower()
+                if q in short or short in q:
+                    return a
+        return None
+
+    # ── Holdings & Quotes ────────────────────────────────────────
+
+    def get_holdings(self, account_id: str | None = None) -> list[dict]:
+        holdings = self._data.get("holdings", [])
+        if account_id:
+            holdings = [h for h in holdings if h["account_id"] == account_id]
+        return holdings
+
+    def get_quote(self, ticker: str) -> dict | None:
+        for q in self._data.get("quotes", []):
+            if q["ticker"].upper() == ticker.upper():
+                return q
+        return None
+
+    def get_all_quotes(self) -> list[dict]:
+        return self._data.get("quotes", [])
+
+    def compute_holding_value(self, holding: dict) -> float:
+        q = self.get_quote(holding["ticker"])
+        if not q:
+            return 0.0
+        return round(holding["shares"] * q["current_price"], 2)
+
+    def compute_holding_gain(self, holding: dict) -> tuple[float, float]:
+        value = self.compute_holding_value(holding)
+        cost = round(holding["shares"] * holding["cost_basis_per_share"], 2)
+        gain = round(value - cost, 2)
+        pct = gain / cost if cost else 0.0
+        return gain, pct
+
+    def compute_account_market_value(self, account_id: str) -> float:
+        holdings = self.get_holdings(account_id=account_id)
+        return round(sum(self.compute_holding_value(h) for h in holdings), 2)
+
+    def compute_net_worth(self) -> dict:
+        depository = sum(
+            a["balance"] for a in self.get_accounts_by_category("depository")
+        )
+        investments = sum(
+            self.compute_account_market_value(a["id"])
+            for a in self.get_accounts_by_category("investment")
+        )
+        credit_owed = sum(
+            a.get("balance_owed", 0.0) for a in self.get_accounts_by_category("credit")
+        )
+        loans = sum(
+            a.get("current_balance", 0.0) for a in self.get_accounts_by_category("loan")
+        )
+        assets = round(depository + investments, 2)
+        liabilities = round(credit_owed + loans, 2)
+        return {
+            "assets": assets,
+            "liabilities": liabilities,
+            "net_worth": round(assets - liabilities, 2),
+            "depository": round(depository, 2),
+            "investments": round(investments, 2),
+            "credit_owed": round(credit_owed, 2),
+            "loans": round(loans, 2),
+        }
+
+    # ── History ──────────────────────────────────────────────────
+
+    def get_balance_history(self, account_id: str | None = None) -> list[dict]:
+        raw = self._data.get("balance_history", [])
+        target_id = account_id or self._data["user"]["default_account_id"]
+        for entry in raw:
+            if entry.get("account_id") == target_id:
+                return entry.get("snapshots", [])
+        return []
+
+    def get_net_worth_history(self) -> list[dict]:
+        return self._data.get("net_worth_history", [])
+
+    def get_monthly_spend_history(self) -> list[dict]:
+        return self._data.get("monthly_spend_history", [])
