@@ -62,6 +62,8 @@ logs/
 *.temp
 *.pid
 *.seed
+*.pyc
+*pycache*
 
 # ─── Assets & large files ────────────────────────────────────
 # Inspiration screenshots are source material, not tracked
